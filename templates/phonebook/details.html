@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block tobase %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<div class=white>
+<h2>Welcome  {{ b }} </h2>
+<h2><a href='logout' class=log>&nbsp;&nbsp;Logout&nbsp;&nbsp;</a></h2>
+<form action='addcontact' method=post>
+Name:    <input type=text name=name required></input>
+Number:<input type=text name=num required></input>
+<input type=hidden name=c value={{ b }}></input>
+<a><input type=submit value=add></form>add contact here..</a>
+
+<script type="text/javascript">
+function showMsg(){
+
+k=userInput.value;
+$.post("/instant",{'d':userInput.value,'c':c.value},function(data){
+		$('#userMsg').html(data);
+
+});
+$('#userMsg').html("searching.....");
+}
+$(document).ready(function() {
+    $("#userInput").focus();
+});
+//function init(){document.getElementById("userInput").focus();}
+</script><form id="q" name="q">
+<input type="text" autocomplete=off maxlength="40" id=userInput onkeyup="showMsg()" name=d value={{ d }}>Search contact</input>
+<input type=hidden id=c name=c value={{ b }}></input>
+</form>
+<n id="userMsg">
+{% for j in info %}
+<p></p>
+
+<b>Name: </b> {{j.name}}&nbsp;&nbsp;<b>No: </b>{{j.number}}</br>
+{% endfor %}
+</n>
+{% endblock %}
+

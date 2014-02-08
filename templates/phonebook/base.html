@@ -1,0 +1,32 @@
+<html>
+{% load staticfiles %}
+<body background="{{ STATIC_URL }}a.jpg">
+<link rel="stylesheet" type="text/css" href="{% static 'phonebook/phon.css' %}" />
+<script type="text/javascript" src="{{ STATIC_URL }}min.js"></script>
+<style>h1{color:green;text-align:center;}
+body { no-repeat;background-size:100% 100%;background-color:#75A3A3;}
+ .button {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+   }
+p{color:red;font-weight:bold;}
+.white{color:black}
+b{color:red;}
+.log{color:green;text-decoration:none;margin-left:700px;top:200px;background-color:white}
+</style>
+
+
+<head>
+<h1>Welcome to phone<c style="font-size:36pt;">Book</c></h1>
+</head>
+
+{% block tobase %}
+{% endblock %}</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block tobase %}
+<hr>
+<hr>
+<form action='check' method=post>
+<p>Name:   </p> <input type=text name=name required></input>
+<p>password:</p><input type=password name=pass required></input>
+<p><input type=submit value=Login>
+<p></p>
+<p>Not register yet? <a href='signup' class="button">Register</a></p>
+</form>
+
+
+{% endblock %}
